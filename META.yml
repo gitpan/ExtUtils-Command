@@ -1,0 +1,21 @@
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         ExtUtils-Command
+version:      1.11
+version_from: lib/ExtUtils/Command.pm
+installdirs:  perl
+abstract:     utilities to replace common UNIX commands in Makefiles etc.
+authored_by:
+    - Randy Kobes <r.kobes@uwinnipeg.ca>
+requires:
+    File::Basename:                0
+    File::Spec:                    0.8
+provides:
+  ExtUtils::Command:
+    file: lib/ExtUtils/Command.pm
+    version: 1.11
+  Shell::Command:
+    file: lib/Shell/Command.pm
+    version: 0.02
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.21
