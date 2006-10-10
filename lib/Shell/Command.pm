@@ -1,6 +1,6 @@
 package Shell::Command;
 
-$VERSION = 0.02;
+$VERSION = 0.03;
 
 # This must come first before ExtUtils::Command is loaded to ensure it
 # takes effect.
@@ -66,7 +66,8 @@ Shell::Command - Cross-platform functions emulating common shell commands
 
 =head1 DESCRIPTION
 
-Thin wrapper around ExtUtils::Command.
+Thin wrapper around ExtUtils::Command. See L<ExtUtils::Command>
+for a description of available commands.
 
 =head1 AUTHOR
 

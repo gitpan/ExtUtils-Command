@@ -1,3 +1,8 @@
+1.12  Mon, Oct 9, 2006
+  - patch to bring ExtUtils::Command into synch with that of
+    ExtUtils-MakeMaker 6.30_01:
+       http://rt.cpan.org/Ticket/Display.html?id=21982
+
 1.11  Wed, Sep 6, 2006
   - initial CPAN release since splitting off from ExtUtils::MakeMaker
 
