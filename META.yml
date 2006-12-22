@@ -1,7 +1,7 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         ExtUtils-Command
-version:      1.12
+version:      1.13
 version_from: lib/ExtUtils/Command.pm
 installdirs:  perl
 license:      perl
@@ -14,7 +14,7 @@ requires:
 provides:
   ExtUtils::Command:
     file: lib/ExtUtils/Command.pm
-    version: 1.12
+    version: 1.13
   Shell::Command:
     file: lib/Shell/Command.pm
     version: 0.03
