@@ -1,12 +1,12 @@
 package Shell::Command;
 
-$VERSION = 0.03;
+$VERSION = 0.04;
 
 # This must come first before ExtUtils::Command is loaded to ensure it
 # takes effect.
 BEGIN {
     *CORE::GLOBAL::exit = sub {
-	CORE::exit(@_) unless caller eq 'ExtUtils::Command';
+	CORE::exit($_[0]) unless caller eq 'ExtUtils::Command';
 
 	my $exit = $_[0] || 0;
 	die "exit: $exit\n";
