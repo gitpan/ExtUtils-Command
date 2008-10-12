@@ -1,3 +1,8 @@
+1.15  Sun, Oct 12, 2008
+  - cp fails to update timestamp on Win32:
+     http://rt.cpan.org/Ticket/Display.html?id=34718
+    Patch supplied by MSCHWERN
+
 1.14  Wed, Mar 12, 2008
   - fix bug in Shell::Command, revealed by fix in version 0.78 of 
     Test::Simple, as described at

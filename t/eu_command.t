@@ -22,10 +22,8 @@ BEGIN {
     File::Path::rmtree( 'ecmddir' );
 }
 
-BEGIN {
-    use Test::More tests => 40;
-    use File::Spec;
-}
+use Test::More tests => 40;
+use File::Spec;
 
 BEGIN {
     # bad neighbor, but test_f() uses exit()
