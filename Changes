@@ -1,3 +1,7 @@
+1.16  Mon, Jan 5, 2009
+  - Add support for VMS UNIX compatibilty mode:
+      https://rt.cpan.org/Ticket/Display.html?id=42144
+
 1.15  Sun, Oct 12, 2008
   - cp fails to update timestamp on Win32:
      http://rt.cpan.org/Ticket/Display.html?id=34718
