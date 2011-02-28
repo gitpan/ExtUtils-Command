@@ -1,13 +1,7 @@
 #!/usr/bin/perl -w
 
 BEGIN {
-    if( $ENV{PERL_CORE} ) {
-        chdir 't';
-        @INC = ('../lib', 'lib/');
-    }
-    else {
-        unshift @INC, 't/lib/';
-    }
+    unshift @INC, 't/lib/';
 }
 chdir 't';
 
@@ -48,7 +42,7 @@ BEGIN {
     @ARGV = ($self, $self);
 
     cat();
-    is( scalar( $$out =~ s/use_ok\( 'ExtUtils::Command'//g), 2, 
+    is( scalar( $$out =~ s/use_ok\( 'ExtUtils::Command'//g), 2,
         'concatenation worked' );
 
     # the truth value here is reversed -- Perl true is shell false
