@@ -2,38 +2,52 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.00503; }
+use 5.005030;
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'utilities to replace common UNIX commands in Makefiles etc.',
-  'AUTHOR' => 'Nick Ing-Simmons <ni-s@cpan.org>, Michael G Schwern <schwern@pobox.com>, Randy Kobes <r.kobes@uwinnipeg.ca>, The Perl 5 Porters',
-  'BUILD_REQUIRES' => {},
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "ABSTRACT" => "utilities to replace common UNIX commands in Makefiles etc.",
+  "AUTHOR" => "Nick Ing-Simmons <ni-s\@cpan.org>, Michael G Schwern <schwern\@pobox.com>, Randy Kobes <r.kobes\@uwinnipeg.ca>, The Perl 5 Porters",
+  "BUILD_REQUIRES" => {},
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'ExtUtils-Command',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'ExtUtils::Command',
-  'PREREQ_PM' => {
-    'Carp' => '0',
-    'Exporter' => '0',
-    'File::Basename' => '0',
-    'File::Compare' => '0',
-    'File::Copy' => '0',
-    'File::Path' => '0',
-    'vars' => '0'
+  "DISTNAME" => "ExtUtils-Command",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "ExtUtils::Command",
+  "PREREQ_PM" => {
+    "Carp" => 0,
+    "Exporter" => 0,
+    "File::Basename" => 0,
+    "File::Compare" => 0,
+    "File::Copy" => 0,
+    "File::Path" => 0,
+    "vars" => 0
   },
-  'VERSION' => '1.17',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "TEST_REQUIRES" => {},
+  "VERSION" => "1.18",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
+  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
